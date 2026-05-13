@@ -1,0 +1,32 @@
+CLIENT COMMUNICATION - EVENTS WITH NICK v6
+
+CURRENT STATIC WEBSITE / GITHUB PAGES MODE
+- The public booking form saves the request locally, and to Supabase when backend-config.js is connected.
+- The client sees an on-screen confirmation with a booking reference.
+- The system can open WhatsApp with the booking/quote message prepared.
+- The system can open an email draft with the quote text prepared.
+- The official quote PDF can be downloaded from the admin dashboard and attached manually.
+
+IMPORTANT LIMITATION
+A static website cannot silently send emails or WhatsApp messages with PDF attachments by itself.
+Browsers do not allow a public website to send emails automatically without an email service or backend function.
+WhatsApp also requires the official WhatsApp Business API for automatic business notifications.
+
+PROFESSIONAL UPGRADE PATH
+For automatic client emails after booking or quotation, connect one of these:
+1. Supabase Edge Function + email provider such as Resend, SendGrid or Brevo.
+2. A Render backend API + email provider.
+3. EmailJS/Formspree-style service for simple email notifications.
+
+For automatic WhatsApp messages, connect:
+1. WhatsApp Business Cloud API, or
+2. a provider such as Twilio/360dialog, depending on what Nick wants and can pay for.
+
+RECOMMENDED FIRST LAUNCH FLOW
+1. Client submits booking request.
+2. Nick sees booking in admin dashboard.
+3. Nick builds quotation.
+4. Nick downloads official quote PDF.
+5. Nick sends PDF manually by WhatsApp or email using the built-in quote buttons.
+
+This keeps the free/low-cost launch realistic while still looking professional.

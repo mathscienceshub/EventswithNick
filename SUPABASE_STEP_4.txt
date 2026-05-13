@@ -1,0 +1,23 @@
+STEP 4: ADD THE SUPABASE VALUES INTO OUR WEBSITE
+
+Open:
+assets/js/backend-config.js
+
+Change it from this:
+
+window.EWN_BACKEND = {
+  provider: 'local',
+  supabaseUrl: '',
+  supabaseAnonKey: ''
+};
+
+To this:
+
+window.EWN_BACKEND = {
+  provider: 'supabase',
+  supabaseUrl: 'https://your-project-id.supabase.co',
+  supabaseAnonKey: 'your-anon-public-key-here'
+};
+
+Use your real Supabase Project URL and anon/public key.
+Never use the service_role key inside public website files.

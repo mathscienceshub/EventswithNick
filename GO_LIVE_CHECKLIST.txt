@@ -1,0 +1,39 @@
+GO-LIVE CHECKLIST - EVENTS WITH NICK
+
+1. Confirm final business name, phone numbers, email and socials.
+2. Replace inspiration images with Nick's approved portfolio images when available.
+3. Confirm official business banking details with Nick.
+4. Add banking details in Admin -> Banking Details.
+5. Buy a custom domain.
+6. Create Supabase project.
+7. Run backend/supabase-schema.sql in Supabase SQL Editor.
+8. Add Supabase URL and anon/public key inside assets/js/backend-config.js.
+9. Test public booking form from a phone.
+10. Test if the booking appears in the admin dashboard from another device.
+11. Test status update: New -> Contacted -> Quoted -> Confirmed.
+12. Test quote builder and download official quote PDF with logo, footer, legal details, generation date/time and watermark.
+13. Test quote WhatsApp button and email draft button.
+14. Test Download Bookings PDF Report.
+15. Decide whether client email/WhatsApp copies will be sent manually or automated with a backend/email provider.
+16. Set up secure owner authentication before handling serious client data.
+17. Deploy final files and hand over the owner portal details.
+
+SUPABASE CONFIGURATION SNIPPET
+
+Open: assets/js/backend-config.js
+
+Change this:
+window.EWN_BACKEND = {
+  provider: 'local',
+  supabaseUrl: '',
+  supabaseAnonKey: ''
+};
+
+To this:
+window.EWN_BACKEND = {
+  provider: 'supabase',
+  supabaseUrl: 'https://your-project-id.supabase.co',
+  supabaseAnonKey: 'your-anon-public-key-here'
+};
+
+Do not use the service_role key in public website files.
